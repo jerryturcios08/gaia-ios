@@ -8,9 +8,22 @@
 import SwiftUI
 
 struct TravelOptionsView: View {
+    @EnvironmentObject var calculatorStore: CalculatorStore
     @State private var numberOfLongRoundTrips = 0
     @State private var numberOfMediumRoundTrips = 0
     @State private var numberOfShortRoundTrips = 0
+
+    func handleLongRoundTripsQuantityChange<V>(_ value: V) {
+        calculatorStore.longRoundTripsQuantity = numberOfLongRoundTrips
+    }
+
+    func handleMediumRoundTripsQuantityChange<V>(_ value: V) {
+        calculatorStore.mediumRoundTripsQuantity = numberOfMediumRoundTrips
+    }
+
+    func handleShortRoundTripsQuantityChange<V>(_ value: V) {
+        calculatorStore.shortRoundTripsQuantity = numberOfShortRoundTrips
+    }
 
     var body: some View {
         Form {

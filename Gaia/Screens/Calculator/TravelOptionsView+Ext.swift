@@ -45,6 +45,7 @@ extension TravelOptionsView {
     }
 
     struct HotelNightsOptionView: View {
+        @EnvironmentObject var calculatorStore: CalculatorStore
         @State private var hotelNightsSelectedIndex = 0
         @State private var hotelNightsOptionsPickerVisible = false
         var hotelNightsOptions = [
@@ -52,29 +53,36 @@ extension TravelOptionsView {
             "1-2 weeks", "3-4 weeks", "1-2 months"
         ]
 
+        func handleHotelNightsOption<V>(_ value: V) {
+            calculatorStore.hotelNightsOption = hotelNightsOptions[hotelNightsSelectedIndex]
+        }
+
         func toggleHotelNightsOptionsPicker() {
             hotelNightsOptionsPickerVisible = !hotelNightsOptionsPickerVisible
         }
 
         var body: some View {
-            Button(action: toggleHotelNightsOptionsPicker) {
-                HStack {
-                    Text("Average number of nights spent in a hotel per year")
-                        .foregroundColor(.primary)
-                    Spacer()
-                    Text(hotelNightsOptions[hotelNightsSelectedIndex])
-                        .foregroundColor(.secondary)
-                }
-            }
-            if hotelNightsOptionsPickerVisible {
-                Picker("Hotel nights option", selection: $hotelNightsSelectedIndex) {
-                    ForEach(hotelNightsOptions.indices) { index in
-                        Text(hotelNightsOptions[index])
-                            .tag(index)
+            Group {
+                Button(action: toggleHotelNightsOptionsPicker) {
+                    HStack {
+                        Text("Average number of nights spent in a hotel per year")
+                            .foregroundColor(.primary)
+                        Spacer()
+                        Text(hotelNightsOptions[hotelNightsSelectedIndex])
+                            .foregroundColor(.secondary)
                     }
                 }
-                .pickerStyle(WheelPickerStyle())
+                if hotelNightsOptionsPickerVisible {
+                    Picker("Hotel nights option", selection: $hotelNightsSelectedIndex) {
+                        ForEach(hotelNightsOptions.indices) { index in
+                            Text(hotelNightsOptions[index])
+                                .tag(index)
+                        }
+                    }
+                    .pickerStyle(WheelPickerStyle())
+                }
             }
+            .onChange(of: hotelNightsSelectedIndex, perform: handleHotelNightsOption)
         }
     }
 }

@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct GaiaApp: App {
+    @StateObject private var calculatorStore = CalculatorStore()
+
     var body: some Scene {
         WindowGroup {
             AppView()
+                .environmentObject(calculatorStore)
         }
     }
 }
