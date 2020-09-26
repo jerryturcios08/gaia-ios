@@ -13,6 +13,7 @@ class CalculatorStore: ObservableObject {
     @Published var residenceOption = "Detached Single Family House"
     @Published var housingSizeOption = "Under 500 sq ft"
     @Published var cleanEnergyOption = "Yes, some"
+    @Published var isRecycling = false
     @Published var dietOption = "Meat lover"
 
     // Transportation published variables

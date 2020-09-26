@@ -9,13 +9,13 @@
 /* Begin PBXBuildFile section */
 		C646F33E251F85FE0076BDBF /* TakeActionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C646F33D251F85FE0076BDBF /* TakeActionView.swift */; };
 		C646F344251F86990076BDBF /* DonateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C646F343251F86990076BDBF /* DonateView.swift */; };
+		C656B9D8251FC3A10088FA38 /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C656B9D7251FC3A10088FA38 /* ResultView.swift */; };
 		C66DA4D9251EC25B00CCB007 /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66DA4D8251EC25B00CCB007 /* AppView.swift */; };
 		C66DA4E0251F307300CCB007 /* CalculatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66DA4DF251F307300CCB007 /* CalculatorView.swift */; };
 		C66F23CD251F968F004E3733 /* CalculatorView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66F23CC251F968F004E3733 /* CalculatorView+Ext.swift */; };
 		C66F23D3251F9A9E004E3733 /* TravelOptionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66F23D2251F9A9E004E3733 /* TravelOptionsView.swift */; };
 		C66F23D9251FA239004E3733 /* TravelOptionsView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66F23D8251FA239004E3733 /* TravelOptionsView+Ext.swift */; };
 		C66F23E8251FA4C3004E3733 /* CalculatorStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66F23E7251FA4C3004E3733 /* CalculatorStore.swift */; };
-		C66F23EB251FA7D1004E3733 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66F23EA251FA7D1004E3733 /* NetworkManager.swift */; };
 		C69E1362251EAF1300FB6701 /* GaiaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69E1361251EAF1300FB6701 /* GaiaApp.swift */; };
 		C69E1364251EAF1300FB6701 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69E1363251EAF1300FB6701 /* HomeView.swift */; };
 		C69E1366251EAF1600FB6701 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C69E1365251EAF1600FB6701 /* Assets.xcassets */; };
@@ -31,13 +31,13 @@
 /* Begin PBXFileReference section */
 		C646F33D251F85FE0076BDBF /* TakeActionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TakeActionView.swift; sourceTree = "<group>"; };
 		C646F343251F86990076BDBF /* DonateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonateView.swift; sourceTree = "<group>"; };
+		C656B9D7251FC3A10088FA38 /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
 		C66DA4D8251EC25B00CCB007 /* AppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppView.swift; sourceTree = "<group>"; };
 		C66DA4DF251F307300CCB007 /* CalculatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorView.swift; sourceTree = "<group>"; };
 		C66F23CC251F968F004E3733 /* CalculatorView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CalculatorView+Ext.swift"; sourceTree = "<group>"; };
 		C66F23D2251F9A9E004E3733 /* TravelOptionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelOptionsView.swift; sourceTree = "<group>"; };
 		C66F23D8251FA239004E3733 /* TravelOptionsView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TravelOptionsView+Ext.swift"; sourceTree = "<group>"; };
 		C66F23E7251FA4C3004E3733 /* CalculatorStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorStore.swift; sourceTree = "<group>"; };
-		C66F23EA251FA7D1004E3733 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		C69E135E251EAF1300FB6701 /* Gaia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gaia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C69E1361251EAF1300FB6701 /* GaiaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GaiaApp.swift; sourceTree = "<group>"; };
 		C69E1363251EAF1300FB6701 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -92,6 +92,7 @@
 			children = (
 				C66DA4DF251F307300CCB007 /* CalculatorView.swift */,
 				C66F23CC251F968F004E3733 /* CalculatorView+Ext.swift */,
+				C656B9D7251FC3A10088FA38 /* ResultView.swift */,
 				C66F23D2251F9A9E004E3733 /* TravelOptionsView.swift */,
 				C66F23D8251FA239004E3733 /* TravelOptionsView+Ext.swift */,
 			);
@@ -126,7 +127,6 @@
 			isa = PBXGroup;
 			children = (
 				C69E1375251EAF4700FB6701 /* Assets */,
-				C69E137A251EAF6000FB6701 /* Managers */,
 				C69E1372251EAF3200FB6701 /* Screens */,
 				C69E1381251EAF9B00FB6701 /* Stores */,
 				C69E137B251EAF6400FB6701 /* Utilities */,
@@ -156,14 +156,6 @@
 				C69E1368251EAF1600FB6701 /* Preview Assets.xcassets */,
 			);
 			path = Assets;
-			sourceTree = "<group>";
-		};
-		C69E137A251EAF6000FB6701 /* Managers */ = {
-			isa = PBXGroup;
-			children = (
-				C66F23EA251FA7D1004E3733 /* NetworkManager.swift */,
-			);
-			path = Managers;
 			sourceTree = "<group>";
 		};
 		C69E137B251EAF6400FB6701 /* Utilities */ = {
@@ -270,8 +262,8 @@
 				C66DA4D9251EC25B00CCB007 /* AppView.swift in Sources */,
 				C646F344251F86990076BDBF /* DonateView.swift in Sources */,
 				C66F23CD251F968F004E3733 /* CalculatorView+Ext.swift in Sources */,
-				C66F23EB251FA7D1004E3733 /* NetworkManager.swift in Sources */,
 				C66F23E8251FA4C3004E3733 /* CalculatorStore.swift in Sources */,
+				C656B9D8251FC3A10088FA38 /* ResultView.swift in Sources */,
 				C66DA4E0251F307300CCB007 /* CalculatorView.swift in Sources */,
 				C69E1364251EAF1300FB6701 /* HomeView.swift in Sources */,
 				C69E1362251EAF1300FB6701 /* GaiaApp.swift in Sources */,

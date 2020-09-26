@@ -8,11 +8,16 @@
 import SwiftUI
 
 struct CalculatorView: View {
-    @State private var isRecyclingItems = true
+    @EnvironmentObject var calculatorStore: CalculatorStore
+    @State private var isRecyclingItems = false
     @State private var railTravelOptionSelected = false
     @State private var busTravelOptionSelected = false
     @State private var carTravelOptionSelected = false
     @State private var bikeTravelOptionSelected = false
+
+    func handleIsRecyclingItemsChange<V>(_ value: V) {
+        calculatorStore.isRecycling = isRecyclingItems
+    }
 
     var navigationBarItems: some ToolbarContent {
         ToolbarItem(placement: .navigationBarTrailing) {
@@ -53,6 +58,7 @@ struct CalculatorView: View {
         }
         .navigationBarTitleDisplayMode(.inline)
         .navigationTitle("Gaia")
+        .onChange(of: isRecyclingItems, perform: handleIsRecyclingItemsChange)
         .toolbar { navigationBarItems }
     }
 }

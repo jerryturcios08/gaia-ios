@@ -12,6 +12,7 @@ struct TravelOptionsView: View {
     @State private var numberOfLongRoundTrips = 0
     @State private var numberOfMediumRoundTrips = 0
     @State private var numberOfShortRoundTrips = 0
+    @State private var resultScreenVisible = false
 
     func handleLongRoundTripsQuantityChange<V>(_ value: V) {
         calculatorStore.longRoundTripsQuantity = numberOfLongRoundTrips
@@ -23,6 +24,10 @@ struct TravelOptionsView: View {
 
     func handleShortRoundTripsQuantityChange<V>(_ value: V) {
         calculatorStore.shortRoundTripsQuantity = numberOfShortRoundTrips
+    }
+
+    func submitButtonTapped() {
+        resultScreenVisible = true
     }
 
     var body: some View {
@@ -51,12 +56,16 @@ struct TravelOptionsView: View {
             }
             HStack {
                 Spacer()
-                Button("Submit", action: {})
+                Button("Submit", action: submitButtonTapped)
                     .foregroundColor(.orange)
                 Spacer()
             }
         }
         .navigationTitle("Gaia")
+        .sheet(isPresented: $resultScreenVisible) {
+            ResultView()
+                .environmentObject(calculatorStore)
+        }
     }
 }
 
